@@ -7,6 +7,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 from datetime import datetime
+import os
 BOT_NAME = "News_app"
 
 SPIDER_MODULES = ["News_app.spiders"]
@@ -89,7 +90,7 @@ ROBOTSTXT_OBEY = True
 
 # Set settings whose default value is deprecated to a future-proof value
 
-bucket = "gs://trim-heaven-415202/"
+bucket = f"gs://{os.environ["BUCKET_NAME"]}"
 
 FEED_EXPORTERS = {
     'csv': 'News_app.exporters.CsvCustomSeperator'
@@ -97,10 +98,10 @@ FEED_EXPORTERS = {
 
 FILES_STORE = bucket
 
-GCS_PROJECT_ID = "trim-heaven-415202"
+GCS_PROJECT_ID = os.environ["PROJECT_ID"]
 
 FEEDS = {
-    "gs://trim-heaven-415202/news/" + str(datetime.now().date()) + "/%(name)s.csv" : {
+    f"{bucket}/news/" + str(datetime.now().date()) + "/%(name)s.csv" : {
         "format" : "csv"
     }
 }

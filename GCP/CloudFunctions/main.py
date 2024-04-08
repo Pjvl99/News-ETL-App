@@ -3,13 +3,15 @@ import pandas as pd
 from google.cloud import bigquery
 from google.cloud import storage
 # Triggered by a change in a storage bucket
+project_id = "trim-heaven-415202"
+
 @functions_framework.cloud_event
 def hello_gcs(cloud_event):
 
     print("Trying to upload gcs data into bigquery")
     client = bigquery.Client()
     job_config = bigquery.LoadJobConfig()
-    table = "trim-heaven-415202.news_dev.news_raw_data"
+    table = f"{project_id}.news_dev.news_raw_data"
 
     data = cloud_event.data
     bucket = data["bucket"]

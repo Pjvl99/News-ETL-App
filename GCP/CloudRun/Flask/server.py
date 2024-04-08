@@ -3,7 +3,7 @@ from google.cloud import bigquery
 from urllib.parse import unquote
 
 app = Flask(__name__)
-client = bigquery.Client(project="trim-heaven-415202")
+client = bigquery.Client()
 
 
 @app.route("/all")
