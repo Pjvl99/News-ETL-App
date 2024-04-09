@@ -23,6 +23,10 @@
    
 ![image](https://github.com/Pjvl99/News-ETL-App/assets/61527863/4f5388f2-7615-4aae-b49e-3c2a3d17fbee)
 
+2. This is how the files look like inside GCS:
+![image](https://github.com/Pjvl99/News-ETL-App/assets/61527863/ef4c6d06-a4f6-4a9b-aa4f-c0bc47ecbb52)
+
+
 3. There's one cloud function uploading the data coming from GCS automatically:
    
 ![image](https://github.com/Pjvl99/News-ETL-App/assets/61527863/fadef86e-26b4-4245-86f6-01db882b3921)
