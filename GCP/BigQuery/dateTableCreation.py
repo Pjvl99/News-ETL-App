@@ -4,7 +4,8 @@ import pandas as pd
 
 print("Creating BigQuery Connection")
 client = bigquery.Client()
-table = "trim-heaven-415202.news_dev.date_table"
+project = ""
+table = f"{project}.news_dev.date_table"
 
 print("Starting date job")
 start_date = date(2000, 1, 1)
